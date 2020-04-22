@@ -1,0 +1,11 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "sample notes application",
+  "main": "app.js",
+  "scripts": {
+    "test": "\"Nothing for now\""
+  },
+  "author": "Srinivasa Rao Thandra",
+  "license": "ISC"
+}
