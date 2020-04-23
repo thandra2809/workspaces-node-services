@@ -23,7 +23,7 @@ const addNote = function (title, body) {
 
 }
 
-const loadNotes = function () {
+const loadNotes = () => {
     try {
         const notesBuffer = fs.readFileSync('notes.json');
         const notesJSON = notesBuffer.toString();
