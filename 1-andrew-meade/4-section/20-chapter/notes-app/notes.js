@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk');
 
 const getNotes = function () {
     return 'Your Notes...';
@@ -43,8 +44,19 @@ const saveNotes = function (notes) {
 
 }
 
-const removeNote = function(title,body){
+const removeNote = function (title) {
 
+    const notes = loadNotes();
+    const notesToRetain = notes.filter((note) => {
+        return note.title !== title;
+    })
+
+    if (notes.length > notesToRetain.length) {
+        saveNotes(notesToRetain);
+        console.log(chalk.green.inverse('Note Removed!'));
+    } else {
+        console.log(chalk.red.inverse('No Note Found'));
+    }
 }
 
-module.exports = {getNotes, addNote,removeNote}
+module.exports = {getNotes, addNote, removeNote}
